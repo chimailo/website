@@ -1,18 +1,24 @@
 /** @type {import('tailwindcss').Config} */
+
+import defaultTheme from "tailwindcss/defaultTheme";
+
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   theme: {
     container: {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        sm: 576 + 24 + "px",
+        md: 768 + 32 + "px",
+        lg: 960 + 48 + "px",
+        xl: 1152 + 64 + "px",
       },
     },
     extend: {
@@ -70,7 +76,11 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      fontFamily: {
+        sans: ["var(--font-asap)", ...defaultTheme.fontFamily.sans],
+        serif: ["var(--font-playfair)", ...defaultTheme.fontFamily.serif],
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
