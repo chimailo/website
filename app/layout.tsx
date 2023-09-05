@@ -1,10 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import { Asap, Playfair_Display } from "next/font/google";
-import { cn } from "@/app/lib/utils";
-import "@/app/globals.css";
-import { ThemeProvider } from "@/app/components/theme";
+
 import Header from "@/app/components/header";
+import { Button } from "@/app/components/ui/button";
+import { cn } from "@/app/lib/utils";
+import { ThemeProvider } from "@/app/components/theme";
+import "@/app/globals.css";
 
 const asap = Asap({
   weight: ["400", "500", "600"],
@@ -37,6 +40,14 @@ export default function RootLayout({
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Button variant="outline" size="lg" asChild>
+            <Link
+              href="#main"
+              className="sr-only focus:not-sr-only focus:top-6 focus:left-6 focus:z-50 focus:absolute focus:h-11 focus:rounded-md focus:px-8"
+            >
+              Skip To Content
+            </Link>
+          </Button>
           <Header />
           {children}
         </ThemeProvider>
