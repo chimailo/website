@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { fetchPosts } from './lib/utils'
+import { fetchPosts } from './lib/api'
 
 export default function Home() {
   console.log(fetchPosts);

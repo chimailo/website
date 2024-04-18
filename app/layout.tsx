@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { Asap, Playfair_Display } from "next/font/google";
 
